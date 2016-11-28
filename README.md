@@ -6,6 +6,8 @@ This is a script that enhances static images with autoplaying video in browsers 
 
 Include the library within your page or application via `<script>`.
 
+(that's all for now, and the below is just a plan for how it will work in the future…)
+
 Add a data-wants-video attribute to `<img>` tags, pointing to the video version of the image. For example:
 
 ```html
