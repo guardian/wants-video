@@ -2,6 +2,10 @@
 
 This is a script that enhances static images with autoplaying video in browsers that support it.
 
+## Latest CDN version
+
+https://interactive.guim.co.uk/libs/wants-video/wantsVideo.js
+
 # Usage
 
 Include the library within your page or application via `<script>`.
