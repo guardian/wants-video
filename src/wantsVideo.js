@@ -2,11 +2,17 @@
 
   var wantsVideo = (function() {
 
+    function isIOS10() {
+      return (navigator.userAgent.indexOf('Safari')>-1 && navigator.userAgent.indexOf('Version/10.')>-1);
+    }
+
     var canVideo = function() {
       var htmlEl = document.documentElement;
-      if (htmlEl.classList.contains('videoautoplay')) {
+      if (isIOS10()) {
         return true;
-      } else if (htmlEl.classList.contains('video')) {
+      } else if (htmlEl.classList.contains('videoautoplay')) {
+        return true;
+      } else if (htmlEl.classList.contains('no-videoautoplay')) {
         return false;
       } else {
         return Modernizr.videoautoplay;
@@ -25,7 +31,7 @@
 
           var videoTag = document.createElement('div');
           videoTag.setAttribute('class', 'video');
-          videoTag.innerHTML = '<video poster="'+videoPoster+'" loop="true"><source src="'+videoSource+'" type="video/mp4"></video>';
+          videoTag.innerHTML = '<video playsinline muted poster="'+videoPoster+'" loop="true"><source src="'+videoSource+'" type="video/mp4"></video>';
 
           imageWrapper.insertBefore(videoTag, img);
 
